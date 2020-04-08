@@ -37,7 +37,7 @@ jobs:
          unzip android-ndk-r21-linux-x86_64.zip
     - name: Issue key
       run: |
-         mkdir ~/.android && keytool -genkey -keystore ~/.android/debug.keystore -v -alias \
+         keytool -genkey -keystore ~/.android/debug.keystore -v -alias \
          androiddebugkey -dname "CN=Android Debug,O=Android,C=US" -keypass \
          android -storepass android -keyalg RSA -keysize 2048 -validity 10000
     - name: make dep
