@@ -25,4 +25,4 @@ jobs:
          wget https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip
          unzip commandlinetools-linux-6200805_latest.zip
          cd tools/bin
-         ./sdkmanager  platform-tools --sdk_root=/opt/android-sdk-linux
+         ./sdkmanager  platform-tools --sdk_root=/opt/android-sdk-linux --accept-license
