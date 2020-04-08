@@ -45,7 +45,7 @@ jobs:
     - name: make dep
       run: |
          cd $GITHUB_WORKSPACE/tools/depends
-         ./bootstrap --no-system-curl
+         ./bootstrap
          ./configure --with-tarballs=/opt/xbmc-tarballs --host=arm-linux-androideabi --with-sdk-path=/opt/android-sdk-linux --with-sdk=android-26 --with-ndk-path=/opt/android-ndk-r21 --with-ndk-api=26 --prefix=/opt/xbmc-depends
          make
     - name: make apk
