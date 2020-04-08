@@ -37,9 +37,9 @@ jobs:
          unzip android-ndk-r21-linux-x86_64.zip
     - name: Issue key
       run: |
-        mkdir ~/.android && keytool -genkey -keystore ~/.android/debug.keystore -v -alias \
-        androiddebugkey -dname "CN=Android Debug,O=Android,C=US" -keypass \
-        android -storepass android -keyalg RSA -keysize 2048 -validity 10000
+         mkdir ~/.android && keytool -genkey -keystore ~/.android/debug.keystore -v -alias \
+         androiddebugkey -dname "CN=Android Debug,O=Android,C=US" -keypass \
+         android -storepass android -keyalg RSA -keysize 2048 -validity 10000
     - name: make dep
       run: |
          cd $GITHUB_WORKSPACE/tools/depends
@@ -47,6 +47,7 @@ jobs:
          ./configure --with-tarballs=/opt/xbmc-tarballs --host=arm-linux-androideabi --with-sdk-path=/opt/android-sdk-linux --with-sdk=android-26 --with-ndk-path=/opt/android-ndk-r21 --with-ndk-api=26 --prefix=/opt/xbmc-depends
          make -j8
     - name: make apk
+      run: |
          cd $GITHUB_WORKSPACE
          make -C tools/depends/target/xbmc
          make -j8
