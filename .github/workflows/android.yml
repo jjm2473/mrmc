@@ -1,0 +1,28 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ mrmc-release_3.9.6 ]
+  pull_request:
+    branches: [ mrmc-release_3.9.6 ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Set up sdk
+      run: |
+         apt-get update && apt-get install libcurl4-openssl-dev lib32stdc++6 lib32z1 lib32z1-dev
+         mkdir /opt/android-sdk-linux
+         cd /opt/android-sdk-linux
+         wget https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip
+         unzip commandlinetools-linux-6200805_latest.zip
+         cd tools/bin
+         ./sdkmanager  platform-tools --sdk_root=/opt/android-sdk-linux
