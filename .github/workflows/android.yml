@@ -45,12 +45,12 @@ jobs:
          cd $GITHUB_WORKSPACE/tools/depends
          ./bootstrap --no-system-curl
          ./configure --with-tarballs=/opt/xbmc-tarballs --host=arm-linux-androideabi --with-sdk-path=/opt/android-sdk-linux --with-sdk=android-26 --with-ndk-path=/opt/android-ndk-r21 --with-ndk-api=26 --prefix=/opt/xbmc-depends
-         make -j8
+         make
     - name: make apk
       run: |
          cd $GITHUB_WORKSPACE
          make -C tools/depends/target/xbmc
-         make -j8
+         make
          make apk
          
            
