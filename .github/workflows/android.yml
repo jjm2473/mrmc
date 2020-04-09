@@ -48,7 +48,7 @@ jobs:
       run: |
          cd $GITHUB_WORKSPACE/tools/depends
          ./bootstrap
-         ./configure --with-tarballs=/opt/xbmc-tarballs --host=arm-linux-androideabi --with-sdk-path=/opt/android-sdk-linux --with-sdk=android-26 --with-ndk-path=/opt/android-ndk-r20b --with-ndk-api=26 --prefix=/opt/xbmc-depends
+         ./configure --with-tarballs=/opt/xbmc-tarballs --host=arm-linux-androideabi --with-sdk-path=/opt/android-sdk-linux --with-sdk=android-21 --with-ndk-path=/opt/android-ndk-r20b --with-ndk-api=21 --prefix=/opt/xbmc-depends
          make -j8
     - name: make apk
       run: |
