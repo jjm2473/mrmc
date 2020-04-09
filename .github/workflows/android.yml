@@ -20,7 +20,7 @@ jobs:
     - name: Set up sdk
       run: |
          sudo apt-get update && sudo apt-get install lib32stdc++6 lib32z1 lib32z1-dev
-         sudo apt-get install build-essential git curl libssl1.0-dev libcurl4-openssl-dev autoconf \
+         sudo apt-get install build-essential git curl libssl1.0-dev libcurl-openssl1.0-dev libcurl3 autoconf \
          unzip zip zlib1g-dev gawk gperf cmake
          mkdir /opt/android-sdk-linux
          cd /opt/android-sdk-linux
