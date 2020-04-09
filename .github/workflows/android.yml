@@ -20,8 +20,9 @@ jobs:
     - name: Set up sdk
       run: |
          sudo apt-get update && sudo apt-get install lib32stdc++6 lib32z1 lib32z1-dev
-         sudo apt-get install build-essential git curl libssl1.0-dev libcurl-openssl1.0-dev libcurl3 autoconf \
+         sudo apt-get install build-essential git curl  autoconf \
          unzip zip zlib1g-dev gawk gperf cmake
+         sudo apt-get install libssl1.0-dev libcurl-openssl1.0-dev libcurl3
          mkdir /opt/android-sdk-linux
          cd /opt/android-sdk-linux
          wget https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip
