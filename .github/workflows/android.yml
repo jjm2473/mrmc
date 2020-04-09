@@ -31,14 +31,14 @@ jobs:
          cd tools/bin
          echo "y" | ./sdkmanager  platform-tools --sdk_root=/opt/android-sdk-linux
          ./sdkmanager  "platforms;android-26" --sdk_root=/opt/android-sdk-linux
-         ./sdkmanager "build-tools;27.0.3" --sdk_root=/opt/android-sdk-linux
+         ./sdkmanager "build-tools;26.0.2" --sdk_root=/opt/android-sdk-linux
          ./sdkmanager "cmake;3.6.4111459" --sdk_root=/opt/android-sdk-linux
          ./sdkmanager tools --sdk_root=/opt/android-sdk-linux
     - name: Set up NDK
       run: |
          cd /opt
-         wget https://dl.google.com/android/repository/android-ndk-r21-linux-x86_64.zip
-         unzip android-ndk-r21-linux-x86_64.zip
+         wget https://dl.google.com/android/repository/android-ndk-r20b-linux-x86_64.zip
+         unzip android-ndk-r20b-linux-x86_64.zip
     - name: Issue key
       run: |
          keytool -genkey -keystore ~/.android/debug.keystore -v -alias \
@@ -48,7 +48,7 @@ jobs:
       run: |
          cd $GITHUB_WORKSPACE/tools/depends
          ./bootstrap
-         ./configure --with-tarballs=/opt/xbmc-tarballs --host=arm-linux-androideabi --with-sdk-path=/opt/android-sdk-linux --with-sdk=android-26 --with-ndk-path=/opt/android-ndk-r21 --with-ndk-api=26 --prefix=/opt/xbmc-depends
+         ./configure --with-tarballs=/opt/xbmc-tarballs --host=arm-linux-androideabi --with-sdk-path=/opt/android-sdk-linux --with-sdk=android-26 --with-ndk-path=/opt/android-ndk-r20b --with-ndk-api=26 --prefix=/opt/xbmc-depends
          make -j8
     - name: make apk
       run: |
