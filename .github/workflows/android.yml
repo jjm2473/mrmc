@@ -20,7 +20,10 @@ jobs:
       with:
         java-version: 1.8
     - name: revert
-      run: git revert 2d0ec433c882615804ea1f4ad23bfe0dc28c57c9
+      run: |
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git revert 2d0ec433c882615804ea1f4ad23bfe0dc28c57c9
     - name: Set up sdk
       run: |
          sudo apt-get update && sudo apt-get install lib32stdc++6 lib32z1 lib32z1-dev
