@@ -17,6 +17,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: revert
+      run: git revert 2d0ec433c882615804ea1f4ad23bfe0dc28c57c9
     - name: Set up sdk
       run: |
          sudo apt-get update && sudo apt-get install lib32stdc++6 lib32z1 lib32z1-dev
@@ -47,7 +49,7 @@ jobs:
          cd $GITHUB_WORKSPACE/tools/depends
          ./bootstrap
          ./configure --with-tarballs=/opt/xbmc-tarballs --host=arm-linux-androideabi --with-sdk-path=/opt/android-sdk-linux --with-sdk=android-26 --with-ndk-path=/opt/android-ndk-r21 --with-ndk-api=26 --prefix=/opt/xbmc-depends
-         make
+         make -j8
     - name: make apk
       run: |
          cd $GITHUB_WORKSPACE
