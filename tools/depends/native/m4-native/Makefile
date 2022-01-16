@@ -5,7 +5,7 @@ DEPS= ../../Makefile.include.in Makefile osx_snprintf.patch
 
 # lib name, version
 LIBNAME=m4
-VERSION=1.4.18
+VERSION=1.4.19
 SOURCE=$(LIBNAME)-$(VERSION)
 ARCHIVE=$(SOURCE).tar.gz
 
