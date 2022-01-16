@@ -35,7 +35,7 @@ LINK_ICONV=@link_iconv@
 HAS_LIBCRYSTAX=@has_libcrystax@
 
 BASE_URL=http://mrmc.tv/mrmc/build-deps/sources
-RETRIEVE_TOOL_FLAGS=-Ls --create-dirs -f -O
+RETRIEVE_TOOL_FLAGS=-Ls --connect-time 5 --max-time 70 --retry 1 --retry-delay 3 --create-dirs -f -O
 ARCHIVE_TOOL_FLAGS=--strip-components=1 -xf
 CONFIG_SUB=@prefix@/@tool_dir@/share/automake-1.11/config.sub
 CONFIG_GUESS=@prefix@/@tool_dir@/share/automake-1.11/config.guess
