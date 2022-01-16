@@ -1,5 +1,5 @@
 include ../../Makefile.include
-DEPS= ../../Makefile.include Makefile
+DEPS= ../../Makefile.include Makefile 020-gawk5-support.patch
 
 # lib name, version
 LIBNAME=libgpg-error
